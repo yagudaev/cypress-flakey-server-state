@@ -4,7 +4,15 @@
   "main": "index.js",
   "author": "Michael Yagudaev <michaelyagudaev@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "client": "cd client && yarn run start",
+    "server": "cd server && yarn run start",
+    "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\""
+  },
   "devDependencies": {
     "cypress": "^3.6.1"
+  },
+  "dependencies": {
+    "concurrently": "^5.0.0"
   }
 }
