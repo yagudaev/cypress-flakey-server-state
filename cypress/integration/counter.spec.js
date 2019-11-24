@@ -9,7 +9,11 @@ describe('Counter App', () => {
     it('increments the counter', () => {
       cy.contains('Increment').click()
       cy.get('[data-cy="counter"]').contains('1')
-      cy.contains('Increment').click()
+
+      cy.server()
+      cy.route('POST', 'http://localhost:4000/counter').as('increment')
+      cy.contains('Increment').click() // "accidental" call to show flakiness
+      cy.wait('@increment')
     })
 
     it('resets the count', () => {
