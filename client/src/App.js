@@ -45,7 +45,6 @@ function useCounter() {
     return axios.post('/counter', { counter: newCount }).then(() => {
       setCount(newCount)
     })
-
   }
 
   return [count, setRemoteCount]
