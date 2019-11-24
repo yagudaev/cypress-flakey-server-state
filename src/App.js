@@ -8,13 +8,20 @@ function App() {
     setCount(count + 1)
   }
 
+  function reset() {
+    setCount(0)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         Counter
       </header>
       <p>{count}</p>
-      <button onClick={increment}>Increment</button>
+      <div class="actions">
+        <button onClick={increment}>Increment</button>
+        <button onClick={reset}>Reset</button>
+      </div>
     </div>
   )
 }
