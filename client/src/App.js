@@ -40,9 +40,12 @@ function useCounter() {
   }, [])
 
   function setRemoteCount(newCount) {
+    setCount(newCount) // optimistic update
+
     return axios.post('/counter', { counter: newCount }).then(() => {
       setCount(newCount)
     })
+
   }
 
   return [count, setRemoteCount]

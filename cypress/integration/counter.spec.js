@@ -2,7 +2,6 @@
 describe('Counter App', () => {
   describe('Counting', () => {
     beforeEach(() => {
-      cy.visit('/')
       resetServerData()
       cy.visit('/')
     })
@@ -13,7 +12,7 @@ describe('Counter App', () => {
       cy.contains('Increment').click()
     })
 
-    it('can reset the count', () => {
+    it('resets the count', () => {
       cy.contains('Increment').click()
       cy.get('[data-cy="counter"]').contains('1')
       cy.contains('Reset').click()

@@ -9,12 +9,13 @@ let counter = 0
 app.get('/counter', (req, res) => res.json({ counter }))
 app.post('/counter', (req, res) => {
   const input = req.body.counter
-  const randomWait = input % 2 === 0 && input !== 0 ? 1000 : 0
+  const randomWait = input % 2 === 0 && input !== 0 ? Math.random() * 200 : 0
   console.log('planning on changing value to', input)
 
   setTimeout(() => {
     counter = input || 0
     console.log('changed value to', counter)
+
     res.json({ counter })
   }, randomWait)
 })
