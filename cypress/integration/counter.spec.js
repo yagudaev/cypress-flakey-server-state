@@ -2,6 +2,7 @@
 describe('Counter App', () => {
   describe('Counting', () => {
     beforeEach(() => {
+      resetServerData()
       cy.visit('/')
     })
 
@@ -19,3 +20,7 @@ describe('Counter App', () => {
     })
   })
 })
+
+function resetServerData() {
+  cy.request('POST', 'http://localhost:4000/counter', { counter: 0 })
+}
