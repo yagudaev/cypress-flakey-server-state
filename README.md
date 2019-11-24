@@ -1,6 +1,6 @@
-# Project Demonstrating Test Isolation Issues with Cypress
+# Project demonstrating flakey test with Cypress when relaying on server state
 
-A demonstration of how easy it is to create flakey tests with Cypress when depending on server state.
+A demonstration of how easy it is to create flakey tests with Cypress when depending on server state. It will show that Cypress does not isolate tests properly for you when it comes to server state.
 
 The app is a counter that is persisted to the server. You can increment the count & reset it. On page refresh the count will be read from the server.
 
