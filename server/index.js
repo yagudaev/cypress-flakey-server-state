@@ -8,8 +8,15 @@ setupServerOptions()
 let counter = 0
 app.get('/counter', (req, res) => res.json({ counter }))
 app.post('/counter', (req, res) => {
-  counter = req.body.counter || 0
-  res.json({ counter })
+  const input = req.body.counter
+  const randomWait = input % 2 === 0 && input !== 0 ? 1000 : 0
+  console.log('planning on changing value to', input)
+
+  setTimeout(() => {
+    counter = input || 0
+    console.log('changed value to', counter)
+    res.json({ counter })
+  }, randomWait)
 })
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))

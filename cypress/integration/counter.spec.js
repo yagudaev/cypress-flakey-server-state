@@ -2,6 +2,7 @@
 describe('Counter App', () => {
   describe('Counting', () => {
     beforeEach(() => {
+      cy.visit('/')
       resetServerData()
       cy.visit('/')
     })

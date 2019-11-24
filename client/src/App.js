@@ -35,7 +35,6 @@ function useCounter() {
 
   useEffect(() => {
     axios.get('/counter').then((res) => {
-      console.log(res.data)
       setCount(res.data.counter)
     })
   }, [])
