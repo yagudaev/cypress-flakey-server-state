@@ -17,7 +17,7 @@ function App() {
       <header className="App-header">
         Counter
       </header>
-      <p>{count}</p>
+      <p data-cy="counter">{count}</p>
       <div class="actions">
         <button onClick={increment}>Increment</button>
         <button onClick={reset}>Reset</button>
